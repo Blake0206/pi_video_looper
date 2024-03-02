@@ -111,6 +111,7 @@ class Playlist:
                 _int == str(random.randrange(1, 5))
                 self.set_next('basketball' + _int + '.mp4')
             elif thing == 'football':
+                print('football playing')
                 _int == str(random.randrange(1, 4))
                 self.set_next('football' + _int + '.mp4')
             elif thing == 'boxing':
