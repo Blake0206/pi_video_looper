@@ -121,7 +121,7 @@ There are also pre-compiled images available from <https://videolooper.de> (but 
 ## How to install
 `sudo apt-get install git`  
 `cd ~`  
-`git clone https://github.com/adafruit/pi_video_looper`  
+`git clone https://github.com/Blake0206/pi_video_looper`  
 `cd pi_video_looper`  
 `sudo ./install.sh`
 
@@ -137,7 +137,7 @@ For backing up the current ini:
 For the update:    
 `cd ~`   
 `sudo rm -rf pi_video_looper`   
-`git clone https://github.com/adafruit/pi_video_looper`    
+`git clone https://github.com/Blake0206/pi_video_looper`    
 `cd pi_video_looper`   
 `sudo ./install.sh` 
 
