@@ -107,16 +107,16 @@ class Playlist:
             if thing == 'baseball':
                 _int == str(random.randrange(1, 3))
                 self.set_next('baseball' + _int + '.mp4')
-            if thing == 'basketball':
+            elif thing == 'basketball':
                 _int == str(random.randrange(1, 5))
                 self.set_next('basketball' + _int + '.mp4')
-            if thing == 'football':
+            elif thing == 'football':
                 _int == str(random.randrange(1, 4))
                 self.set_next('football' + _int + '.mp4')
-            if thing == 'boxing':
+            elif thing == 'boxing':
                 _int = str(random.randrange(1, 6))
                 self.set_next('boxing' + _int + '.mp4')
-            if thing == 'misc':
+            elif thing == 'misc':
                 _int == str(random.randrange(1, 2))
                 self.set_next('misc' + _int + '.mp4')
             if thing in self._movies:
