@@ -106,7 +106,7 @@ class Playlist:
         elif isinstance(thing, str):
             if thing == 'boxing':
                 _int = str(random.randrange(1, 6))
-                self._next('boxing' + _int + '.mp4')
+                self.set_next('boxing' + _int + '.mp4')
             if thing in self._movies:
                 self._next = self._movies[self._movies.index(thing)]
             elif thing[0:1] in ("+","-"):
