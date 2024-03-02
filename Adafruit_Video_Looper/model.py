@@ -4,6 +4,7 @@
 import random
 from os.path import basename
 from typing import Optional, Union
+from .video_looper import _print
 
 random.seed()
 
@@ -100,18 +101,49 @@ class Playlist:
     
     # sets next by filename or Movie object or index
     def set_next(self, thing: Union[Movie, str, int]):
+        _print('running set_next function')
         if isinstance(thing, Movie):
+            _print('thing is a movie')
             if (thing in self._movies):
                 self._next(thing)
         elif isinstance(thing, str):
+            _print('thing is a string')
+            if _input == "baseball":
+                _print('thing is baseball')
+                 int = str(random.randrange(1, 6))
+                 _print('baseball' + int + '.mp4')
+                 self._next('baseball' + int + '.mp4')
+            if _input == "basketball":
+                 _print('thing is basketball')
+                 int = str(random.randrange(1, 5))
+                 _print('basketball' + int + '.mp4')
+                 self._next('basketball' + int + '.mp4')
+            if _input == "football":
+                 _print('thing is football')
+                 int = str(random.randrange(1, 3))
+                 _print('football' + int + '.mp4')
+                 self._next('football' + int + '.mp4')
+            if _input == "boxing":
+                 _print('thing is boxing')
+                 int = str(random.randrange(1, 4))
+                 _print('boxing' + int + '.mp4')
+                 self._next('boxing' + int + '.mp4')
+            if _input == "misc":
+                 _print('thing is misc')
+                 int = str(random.randrange(1, 2))
+                 _print('misc' + int + '.mp4')
+                 self._next('misc' + int + '.mp4')
             if thing in self._movies:
+                _print('thing is in movies...skipped custom function')
                 self._next = self._movies[self._movies.index(thing)]
             elif thing[0:1] in ("+","-"):
                 self._next = self._movies[(self._index+int(thing))%self.length()]
         elif isinstance(thing, int):
+            _print('thing is an int...skipped custom function')
             if thing >= 0 and thing <= self.length():
                 self._next = self._movies[thing]
         else:
+            _print('thing is none')
             self._next = None
         self.clear_all_playcounts()
         self._movies[self._index].finish_playing() #set the current to max playcount so it will not get played again
