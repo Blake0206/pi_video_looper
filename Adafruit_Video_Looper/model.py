@@ -108,6 +108,7 @@ class Playlist:
                 self._next(thing)
         elif isinstance(thing, str):
             _print('thing is a string')
+            """
             if _input == "baseball":
                 _print('thing is baseball')
                  int = str(random.randrange(1, 6))
@@ -133,6 +134,7 @@ class Playlist:
                  int = str(random.randrange(1, 2))
                  _print('misc' + int + '.mp4')
                  self._next('misc' + int + '.mp4')
+            """
             if thing in self._movies:
                 _print('thing is in movies...skipped custom function')
                 self._next = self._movies[self._movies.index(thing)]
