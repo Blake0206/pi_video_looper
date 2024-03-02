@@ -105,20 +105,19 @@ class Playlist:
                 self._next(thing)
         elif isinstance(thing, str):
             if thing == 'baseball':
-                _int == str(random.randrange(1, 3))
+                _int = str(random.randrange(1, 3))
                 self.set_next('baseball' + _int + '.mp4')
             elif thing == 'basketball':
-                _int == str(random.randrange(1, 5))
+                _int = str(random.randrange(1, 5))
                 self.set_next('basketball' + _int + '.mp4')
             elif thing == 'football':
-                print('football playing')
-                _int == str(random.randrange(1, 4))
+                _int = str(random.randrange(1, 4))
                 self.set_next('football' + _int + '.mp4')
             elif thing == 'boxing':
                 _int = str(random.randrange(1, 6))
                 self.set_next('boxing' + _int + '.mp4')
             elif thing == 'misc':
-                _int == str(random.randrange(1, 2))
+                _int = str(random.randrange(1, 2))
                 self.set_next('misc' + _int + '.mp4')
             if thing in self._movies:
                 self._next = self._movies[self._movies.index(thing)]
