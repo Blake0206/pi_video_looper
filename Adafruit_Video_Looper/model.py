@@ -116,11 +116,29 @@ class Playlist:
             elif thing == 'boxing':
                 boxing_int = str(random.randrange(1, 6))
                 self.set_next('boxing' + boxing_int + '.mp4')
-            elif thing == 'misc':
-                misc_int = str(random.randrange(1, 2))
-                self.set_next('misc' + misc_int + '.mp4')
+            elif thing == 'intros':
+                intros_int = str(random.randrange(1, 3))
+                self.set_next('intros' + intros_int + '.mp4')
+                
             elif thing == 'random':
                 self._index = random.randrange(0, self.length())
+
+            elif thing == 'nineties':
+                nineties_int = str(random.randrange(0, 3))
+                self.set_next('nineties' + nineties_int + '.mp4')
+            elif thing == 'eighties':
+                eighties_int = str(random.randrange(0, 3))
+                self.set_next('eighties' + eighties_int + '.mp4')
+            elif thing == 'seventies':
+                seventies_int = str(random.randrange(0, 3))
+                self.set_next('seventies' + seventies_int + '.mp4')
+            elif thing == 'sixties':
+                sixties_int = str(random.randrange(0, 3))
+                self.set_next('sixties' + sixties_int + '.mp4')
+            elif thing == 'fifties':
+                fifties_int = str(random.randrange(0, 3))
+                self.set_next('fifties' + fifties_int + '.mp4')
+            
             if thing in self._movies:
                 self._next = self._movies[self._movies.index(thing)]
             elif thing[0:1] in ("+","-"):
