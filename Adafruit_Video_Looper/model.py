@@ -104,67 +104,53 @@ class Playlist:
             if (thing in self._movies):
                 self._next(thing)
         elif isinstance(thing, str):
-            if thing == 'baseball':
-                last_thing = 'sports'
-                baseball_int = str(random.randrange(1, 3))
-                self.set_next('baseball' + baseball_int + '.mp4')
-            elif thing == 'basketball':
-                last_thing = 'sports'
-                basketball_int = str(random.randrange(1, 5))
-                self.set_next('basketball' + basketball_int + '.mp4')
-            elif thing == 'football':
-                last_thing = 'sports'
-                football_int = str(random.randrange(1, 4))
-                self.set_next('football' + football_int + '.mp4')
-            elif thing == 'boxing':
-                last_thing = 'sports'
-                boxing_int = str(random.randrange(1, 6))
-                self.set_next('boxing' + boxing_int + '.mp4')
-            elif thing == 'intros':
-                last_thing = 'sports'
-                intros_int = str(random.randrange(1, 3))
-                self.set_next('intros' + intros_int + '.mp4')
-            elif thing == 'sports_static':
-                last_thing = 'sports'
-                self.set_next('sports_static.mp4')
-                
+            if thing == 'button1':
+                if selector == 'sports':
+                    baseball_int = str(random.randrange(1, 3))
+                    self.set_next('baseball' + baseball_int + '.mp4')
+                if selector == 'music':
+                    nineties_int = str(random.randrange(0, 3))
+                    self.set_next('nineties' + nineties_int + '.mp4')
+            elif thing == 'button2':
+                if selector == 'sports':
+                    basketball_int = str(random.randrange(1, 5))
+                    self.set_next('basketball' + basketball_int + '.mp4')
+                if selector == 'music':
+                    eighties_int = str(random.randrange(0, 3))
+                self.set_next('eighties' + eighties_int + '.mp4')
+            elif thing == 'button3':
+                if selector == 'sports':
+                    football_int = str(random.randrange(1, 4))
+                    self.set_next('football' + football_int + '.mp4')
+                if selector == 'music':
+                    seventies_int = str(random.randrange(0, 3))
+                    self.set_next('seventies' + seventies_int + '.mp4')
+            elif thing == 'button4':
+                if selector == 'sports':
+                    boxing_int = str(random.randrange(1, 6))
+                    self.set_next('boxing' + boxing_int + '.mp4')
+                if selector == 'music':
+                    sixties_int = str(random.randrange(0, 3))
+                    self.set_next('sixties' + sixties_int + '.mp4')
+            elif thing == 'button5':
+                if selector == 'sports':
+                    intros_int = str(random.randrange(1, 3))
+                    self.set_next('intros' + intros_int + '.mp4')
+                if selector == 'music':
+                    fifties_int = str(random.randrange(0, 3))
+                    self.set_next('fifties' + fifties_int + '.mp4')
             elif thing == 'random':
                 #self._index = random.randrange(0, self.length())
-                if last_thing == 'sports':
+                if selector == 'sports':
                     sports_dict = {'baseball': baseball_int, 'basketball': basketball_int, 'football': football_int, 'boxing': boxing_int, 'intros': intros_int}
                     choice = random.sample(sports_dict.items(), 1)
                     sport, _int = choice.pop(0)
                     self.set_next(sport + _int + '.mp4')
-                if last_thing == 'music':
+                if selector == 'music':
                     music_dict = {'nineties': nineties_int, 'eighties': eighties_int, 'seventies': seventies_int, 'sixties': sixties_int, 'fifties': fifties_int}
                     choice = random.sample(music_dict.items(), 1)
                     decade, _int = choice.pop(0)
                     self.set_next(decade + _int + '.mp4')
-                    
-
-            elif thing == 'nineties':
-                last_thing = 'music'
-                nineties_int = str(random.randrange(0, 3))
-                self.set_next('nineties' + nineties_int + '.mp4')
-            elif thing == 'eighties':
-                last_thing = 'music'
-                eighties_int = str(random.randrange(0, 3))
-                self.set_next('eighties' + eighties_int + '.mp4')
-            elif thing == 'seventies':
-                last_thing = 'music'
-                seventies_int = str(random.randrange(0, 3))
-                self.set_next('seventies' + seventies_int + '.mp4')
-            elif thing == 'sixties':
-                last_thing = 'music'
-                sixties_int = str(random.randrange(0, 3))
-                self.set_next('sixties' + sixties_int + '.mp4')
-            elif thing == 'fifties':
-                last_thing = 'music'
-                fifties_int = str(random.randrange(0, 3))
-                self.set_next('fifties' + fifties_int + '.mp4')
-            elif thing == 'music_static':
-                last_thing = 'music'
-                self.set_next('music_static.mp4')
             
             if thing in self._movies:
                 self._next = self._movies[self._movies.index(thing)]
