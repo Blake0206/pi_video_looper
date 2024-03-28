@@ -106,6 +106,8 @@ class Playlist:
         elif isinstance(thing, str):
 
             if thing == 'selector_change':
+                if selector == None:
+                    selector = 'sports'
                 if selector == 'sports':
                     selector = 'music'
                 if selector == 'music':
