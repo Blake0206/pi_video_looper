@@ -105,13 +105,7 @@ class Playlist:
                 self._next(thing)
         elif isinstance(thing, str):
 
-            if thing == 'selector_change':
-                if selector == None:
-                    selector = 'sports'
-                if selector == 'sports':
-                    selector = 'music'
-                if selector == 'music':
-                    selector = 'sports'
+            selector = 'sports'
             
             if thing == 'button1':
                 if selector == 'sports':
