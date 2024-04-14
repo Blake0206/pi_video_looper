@@ -139,7 +139,7 @@ For the update:
 `sudo rm -rf pi_video_looper`   
 `git clone https://github.com/Blake0206/pi_video_looper`    
 `cd pi_video_looper`   
-`sudo ./install.sh` 
+`sudo ./install.sh no_hello_video` 
 
 ## Features and settings
 To change the settings of the video looper (e.g. random playback, copy mode, GPIO control, advanced features) edit the `/boot/video_looper.ini` file, i.e. by quitting the player with 'ESC' and logging in to the Raspberry with an attached keyboard, or remotely via ssh. Then edit the configuration file with `sudo nano /boot/video_looper.ini`.
