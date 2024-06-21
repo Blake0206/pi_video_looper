@@ -105,9 +105,18 @@ class Playlist:
                 self._next(thing)
         elif isinstance(thing, str):
 
-            selector = 'sports'
+            val = 0
+            if val == 0:
+                selector == 'sports'
+                val = 1
             
-            if thing == 'button1':
+            if thing == 'selector_change' and val == 1:
+                if selector == 'sports':
+                    selector = 'music'
+                elif selector == 'music':
+                    selector = 'sports'
+            
+            elif thing == 'button1':
                 if selector == 'sports':
                     baseball_int = str(random.randrange(1, 3))
                     self.set_next('baseball' + baseball_int + '.mp4')
