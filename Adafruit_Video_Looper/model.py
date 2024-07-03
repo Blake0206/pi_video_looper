@@ -130,7 +130,7 @@ class Playlist:
                     self.set_next('basketball' + basketball_int + '.mp4')
                 if selector == 'music':
                     eighties_int = str(random.randrange(1, 6))
-                self.set_next('eighties' + eighties_int + '.mp4')
+                    self.set_next('eighties' + eighties_int + '.mp4')
             elif thing == 'button3':
                 if selector == 'sports':
                     football_int = str(random.randrange(1, 6))
