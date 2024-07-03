@@ -104,9 +104,13 @@ class Playlist:
             if (thing in self._movies):
                 self._next(thing)
         elif isinstance(thing, str):
+
+            selector = 'sports'
             
             if thing == 'selector_change':
-                selector = 'music' or 'sports'
+                selector = 'music'
+                thing = random
+                pass
             
             elif thing == 'button1':
                 if selector == 'sports':
