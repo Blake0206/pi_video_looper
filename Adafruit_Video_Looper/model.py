@@ -106,6 +106,7 @@ class Playlist:
             if (thing in self._movies):
                 self._next(thing)
         elif isinstance(thing, str):
+            global val
             
             if val == 0:
                 selector = 'sports'
