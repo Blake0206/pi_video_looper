@@ -7,8 +7,6 @@ from typing import Optional, Union
 
 random.seed()
 
-val = 0
-
 class Movie:
     """Representation of a movie"""
 
@@ -108,11 +106,8 @@ class Playlist:
             if (thing in self._movies):
                 self._next(thing)
         elif isinstance(thing, str):
-            
-            if val == 0:
-                selector = 'sports'
 
-            val += 1
+            selector = 'sports'
 
             if thing == 'selector_change':
                 if selector == 'sports':
