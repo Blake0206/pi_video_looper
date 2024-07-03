@@ -105,47 +105,52 @@ class Playlist:
                 self._next(thing)
         elif isinstance(thing, str):
 
-            selector = 'sports'
-            
-            if thing == 'selector_change':
+            val = random.randrange(1, 3)
+            if val == 1:
+                selector = 'sports'
+            elif val == 2:
                 selector = 'music'
-                thing = random
-                pass
+
+            if thing == 'selector_change':
+                if selector == 'sports':
+                    selector = 'music'
+                elif selector == 'music':
+                    selector = 'sports'
             
             elif thing == 'button1':
                 if selector == 'sports':
-                    baseball_int = str(random.randrange(1, 3))
+                    baseball_int = str(random.randrange(1, 6))
                     self.set_next('baseball' + baseball_int + '.mp4')
                 if selector == 'music':
-                    nineties_int = str(random.randrange(0, 3))
+                    nineties_int = str(random.randrange(1, 6))
                     self.set_next('nineties' + nineties_int + '.mp4')
             elif thing == 'button2':
                 if selector == 'sports':
-                    basketball_int = str(random.randrange(1, 5))
+                    basketball_int = str(random.randrange(1, 6))
                     self.set_next('basketball' + basketball_int + '.mp4')
                 if selector == 'music':
-                    eighties_int = str(random.randrange(0, 3))
+                    eighties_int = str(random.randrange(1, 6))
                 self.set_next('eighties' + eighties_int + '.mp4')
             elif thing == 'button3':
                 if selector == 'sports':
-                    football_int = str(random.randrange(1, 4))
+                    football_int = str(random.randrange(1, 6))
                     self.set_next('football' + football_int + '.mp4')
                 if selector == 'music':
-                    seventies_int = str(random.randrange(0, 3))
+                    seventies_int = str(random.randrange(1, 6))
                     self.set_next('seventies' + seventies_int + '.mp4')
             elif thing == 'button4':
                 if selector == 'sports':
                     boxing_int = str(random.randrange(1, 6))
                     self.set_next('boxing' + boxing_int + '.mp4')
                 if selector == 'music':
-                    sixties_int = str(random.randrange(0, 3))
+                    sixties_int = str(random.randrange(1, 6))
                     self.set_next('sixties' + sixties_int + '.mp4')
             elif thing == 'button5':
                 if selector == 'sports':
                     intros_int = str(random.randrange(1, 3))
                     self.set_next('intros' + intros_int + '.mp4')
                 if selector == 'music':
-                    fifties_int = str(random.randrange(0, 3))
+                    fifties_int = str(random.randrange(1, 6))
                     self.set_next('fifties' + fifties_int + '.mp4')
             elif thing == 'random':
                 #self._index = random.randrange(0, self.length())
