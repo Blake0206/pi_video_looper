@@ -55,6 +55,7 @@ class Playlist:
         self._movies = movies
         self._index = None
         self._next = None
+        val = 0
 
     def get_next(self, is_random, resume = False) -> Movie:
         """Get the next movie in the playlist. Will loop to start of playlist
@@ -105,7 +106,6 @@ class Playlist:
                 self._next(thing)
         elif isinstance(thing, str):
 
-            val = 0
             if val == 0:
                 selector == 'sports'
                 val = 1
