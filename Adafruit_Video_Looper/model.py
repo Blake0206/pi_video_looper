@@ -102,11 +102,12 @@ class Playlist:
     
     # sets next by filename or Movie object or index
     def set_next(self, thing: Union[Movie, str, int]):
+        global val
+        
         if isinstance(thing, Movie):
             if (thing in self._movies):
                 self._next(thing)
         elif isinstance(thing, str):
-            global val
             
             if val == 0:
                 selector = 'sports'
