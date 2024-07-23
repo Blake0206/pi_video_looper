@@ -74,7 +74,7 @@ class Playlist:
         # Start Random movie
         if is_random:
             self._index = random.randrange(0, self.length())
-           self._index=self._movies.index('static.mp4')
+            self._next = 'baseball1.mp4'
         else:
             # Start at the first movie or resume and increment through them in order.
             if self._index is None:
