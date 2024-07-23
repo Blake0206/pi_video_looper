@@ -73,10 +73,8 @@ class Playlist:
         
         # Start Random movie
         if is_random:
-            if thing is None:
-                self._index = random.randrange(0, self.length())
-            else:
-                self.set_next(thing)
+            self._index = random.randrange(0, self.length())
+            self._next = 'static.mp4'
         else:
             # Start at the first movie or resume and increment through them in order.
             if self._index is None:
@@ -103,8 +101,7 @@ class Playlist:
     
     # sets next by filename or Movie object or index
     def set_next(self, thing: Union[Movie, str, int]):
-        global thing
-        
+
         if isinstance(thing, Movie):
             if (thing in self._movies):
                 self._next(thing)
