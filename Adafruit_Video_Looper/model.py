@@ -100,18 +100,19 @@ class Playlist:
     
     # sets next by filename or Movie object or index
     def set_next(self, thing: Union[Movie, str, int]):
+        global val
         
         if isinstance(thing, Movie):
             if (thing in self._movies):
                 self._next(thing)
         elif isinstance(thing, str):
 
+            selector = 'sports'
+
             if thing == 'selector_change':
                 if selector == 'sports':
-                    global selector
                     selector = 'music'
                 elif selector == 'music':
-                    global selector
                     selector = 'sports'
             
             elif thing == 'button1':
