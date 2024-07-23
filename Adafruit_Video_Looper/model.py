@@ -73,7 +73,8 @@ class Playlist:
         
         # Start Random movie
         if is_random:
-            self._index = random.randrange(0, self.length())
+            #self._index = random.randrange(0, self.length())
+            self.set_next(thing)
         else:
             # Start at the first movie or resume and increment through them in order.
             if self._index is None:
