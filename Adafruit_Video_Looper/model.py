@@ -73,6 +73,7 @@ class Playlist:
         
         # Start Random movie
         if is_random:
+            selector = 'sports'
             if thing != 'selector_change':
                 if thing != 'random':
                     self.set_next(thing)
@@ -106,16 +107,14 @@ class Playlist:
     
     # sets next by filename or Movie object or index
     def set_next(self, thing: Union[Movie, str, int]):
-        global val
         
         if isinstance(thing, Movie):
             if (thing in self._movies):
                 self._next(thing)
         elif isinstance(thing, str):
 
-            selector = 'sports'
-
             if thing == 'selector_change':
+                global selector
                 if selector == 'sports':
                     selector = 'music'
                 elif selector == 'music':
