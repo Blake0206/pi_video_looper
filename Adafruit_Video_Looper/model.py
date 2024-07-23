@@ -103,6 +103,7 @@ class Playlist:
     
     # sets next by filename or Movie object or index
     def set_next(self, thing: Union[Movie, str, int]):
+        global thing
         
         if isinstance(thing, Movie):
             if (thing in self._movies):
