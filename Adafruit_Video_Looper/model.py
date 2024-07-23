@@ -114,10 +114,11 @@ class Playlist:
         elif isinstance(thing, str):
 
             if thing == 'selector_change':
-                global selector
                 if selector == 'sports':
+                    global selector
                     selector = 'music'
                 elif selector == 'music':
+                    global selector
                     selector = 'sports'
             
             elif thing == 'button1':
