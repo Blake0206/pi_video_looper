@@ -73,7 +73,17 @@ class Playlist:
         
         # Start Random movie
         if is_random:
-            self._index = random.randrange(0, self.length())
+            selector = 'sports'
+            if thing is not None:
+                if thing != 'selector_change':
+                    if thing != 'random':
+                        self.set_next(thing)
+                    else:
+                        self._index = random.randrange(0, self.length())
+                else:
+                    self._index = random.randrange(0, self.length())
+            else:
+                self._index = random.randrange(0, self.length())
         else:
             # Start at the first movie or resume and increment through them in order.
             if self._index is None:
@@ -100,16 +110,14 @@ class Playlist:
     
     # sets next by filename or Movie object or index
     def set_next(self, thing: Union[Movie, str, int]):
-        global val
         
         if isinstance(thing, Movie):
             if (thing in self._movies):
                 self._next(thing)
         elif isinstance(thing, str):
 
-            selector = 'sports'
-
             if thing == 'selector_change':
+                global selector
                 if selector == 'sports':
                     selector = 'music'
                 elif selector == 'music':
