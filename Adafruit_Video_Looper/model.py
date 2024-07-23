@@ -74,9 +74,12 @@ class Playlist:
         # Start Random movie
         if is_random:
             selector = 'sports'
-            if thing != 'selector_change':
-                if thing != 'random':
-                    self.set_next(thing)
+            if thing is not None:
+                if thing != 'selector_change':
+                    if thing != 'random':
+                        self.set_next(thing)
+                    else:
+                        self._index = random.randrange(0, self.length())
                 else:
                     self._index = random.randrange(0, self.length())
             else:
